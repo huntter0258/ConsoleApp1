@@ -20,6 +20,7 @@ namespace ConsoleApp1
             int temp = b;
             b = a;
             a = temp;
+            Console.WriteLine("swap   :  in a={0}, b={1}", a, b);
         }
 
         static void mySwap(ref int a, ref int b)
@@ -42,11 +43,13 @@ namespace ConsoleApp1
 
         static int sum(int a, int b)
         {
+            Console.WriteLine("int sum");
             return a + b;
         }
 
         static double sum(double a, double b)
         {
+            Console.WriteLine("double sum");
             return a + b;
         }
 
@@ -57,8 +60,17 @@ namespace ConsoleApp1
             int c = 3;
             int d = 4;
 
+            double tmpOut;
+            bool isDouble = double.TryParse("1.1한글1", out tmpOut);
+
+            Console.WriteLine("isDouble {0} ", isDouble);
+            Console.WriteLine("tmpOut {0} ", tmpOut);
+            //printf("%f", tmpOut);
+
             Console.WriteLine("{0} + {1} = {2:0.0}", a,b,sum(a,b));
             Console.WriteLine("{0} + {1} = {2}", c, d, sum(c, d));
+            //Console.WriteLine("{0} + {1} = {2:0.0}", a, d, sum(a, double.Parse("1.1한글1") ));
+            //Console.WriteLine("{0} + {1} = {2:0.0}", a, d, sum(a, (double)(".1")));
         }
 
         static int myFactorial(int n)
@@ -94,12 +106,12 @@ namespace ConsoleApp1
             int n = 10;
             Stopwatch sw = new Stopwatch();
             sw.Start();
-            Console.WriteLine("myFactorial     :  {0}! = {1}", n, myFactorial(n));
+            Console.WriteLine("myFactorialLoop :  {0}! = {1}", n, myFactorialLoop(n));
             sw.Stop();
             Console.WriteLine(sw.ElapsedMilliseconds.ToString() + "ms");
             sw.Reset();
             sw.Start();
-            Console.WriteLine("myFactorialLoop :  {0}! = {1}", n, myFactorialLoop(n));
+            Console.WriteLine("myFactorial     :  {0}! = {1}", n, myFactorial(n));
             sw.Stop();
             Console.WriteLine(sw.ElapsedMilliseconds.ToString() + "ms");
 
