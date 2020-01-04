@@ -116,8 +116,6 @@ namespace ConsoleApp1
         {
             //lecture1();
             lecture2();
-
-
         }
     }
 }
