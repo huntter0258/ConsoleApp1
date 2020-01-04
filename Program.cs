@@ -114,8 +114,8 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            lecture1();
-            //lecture2();
+            //lecture1();
+            lecture2();
         }
     }
 }
